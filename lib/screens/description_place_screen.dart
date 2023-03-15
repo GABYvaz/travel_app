@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:multiplicador_basico/screens/review.dart';
+import 'package:multiplicador_basico/screens/button_navigate.dart';
 
 class DescriptionPlaceScreen extends StatelessWidget {
       final String descriptionPlace;
@@ -23,14 +23,14 @@ class DescriptionPlaceScreen extends StatelessWidget {
       fontWeight: FontWeight.bold,
     );
 
-    final stars = Container(
+    final star = Container(
       margin: const EdgeInsets.only(
         top: 323.0,
         right: 3.0,
       ),
       child: const Icon(
         Icons.star_border,
-        color: Colors.purpleAccent,
+        color: Color.fromARGB(255, 181, 39, 225),
       ),
     );
     final description = Container(
@@ -58,22 +58,24 @@ class DescriptionPlaceScreen extends StatelessWidget {
             right: 20.0,
           ),
           child:  const Text(
-            "Duwil Ella",
+            "Gabriela Anahi",
             style: titleStyle,
             textAlign: TextAlign.left,
           )
           ),
-          stars,
-          stars,
-          stars,
-          stars,
+          star,
+          star,
+          star,
       ],
     );
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         titleAndStars,
         description,
-        const Review(),
+        const ButtonNavigate(
+          buttonText: 'Mas informacion....',
+        )
       ],
     );
   }

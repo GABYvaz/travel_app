@@ -22,13 +22,13 @@ class CardImage extends StatelessWidget {
         borderRadius: const BorderRadius.all(Radius.circular(20.0)),
         boxShadow: const <BoxShadow>[
           BoxShadow(
-              color: Colors.black38, blurRadius: 15.0, offset: Offset(0.0, 7.0))
-        ],
-      ),
+              color: Colors.black38, blurRadius: 15.0, 
+              offset: Offset(0.0, 7.0))
+        ]),
     );
     return Stack(
       alignment: const Alignment(0.9, 1.1),
-      children: [card, SmallButton()],
+      children: [card, const SmallButton()],
     );
   }
 }

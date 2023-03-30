@@ -1,81 +1,59 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:multiplicador_basico/screens/button_navigate.dart';
 
 class DescriptionPlaceScreen extends StatelessWidget {
-      final String descriptionPlace;
-      final String namePlace;
-      final int stars;
-      
-
-  const DescriptionPlaceScreen({super.key, 
-  required this.descriptionPlace, 
-  required this.namePlace, 
-  required this.stars, 
- });
-
+  const DescriptionPlaceScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     const TextStyle titleStyle = TextStyle(
-      
       fontSize: 30.0,
       fontWeight: FontWeight.bold,
     );
 
-    final star = Container(
-      margin: const EdgeInsets.only(
-        top: 323.0,
-        right: 3.0,
-      ),
-      child: const Icon(
-        Icons.star_border,
-        color: Color.fromARGB(255, 181, 39, 225),
-      ),
-    );
+    //contsante que guarda un texto lorem
+    const descriptionText =
+        'Nisi id occaecat eu occaecat elit ad reprehenderit est aliquip ipsum ad ex. Duis elit officia enim eiusmod occaecat. Deserunt nulla elit cupidatat laborum commodo id fugiat sint. Dolore tempor dolore veniam ut qui. Irure est ad adipisicing veniam cillum labore ut reprehenderit tempor qui occaecat.\n\n Id enim nisi Lorem ea magna minim est irure elit duis voluptate anim. Incididunt qui sunt sunt incididunt. Non occaecat nostrud magna pariatur dolor eu velit mollit dolore velit ipsum duis nulla. Do laboris ut aute eiusmod nisi mollit voluptate amet esse amet.';
+   
+    final estrella = Container(
+        margin: const EdgeInsets.only(top: 300.0, right: 3.0),
+        child: const Icon(
+          Icons.star,
+          color: Color.fromARGB(255, 255, 247, 6)
+        ));
+   
     final description = Container(
-      margin: const EdgeInsets.only(
-        top: 20.0,
-        left: 20.0,
-        right: 20.0,
-      ),
-      child:  Text(
-        descriptionPlace,
-        style: GoogleFonts.almendra(
-          textStyle: const TextStyle(
-            fontSize: 16.0,
-          )
+        margin: const EdgeInsets.only(
+          top: 20.0,
+          left: 20.0,
+          right: 20.0,
         ),
-      ),
-    );
-
+        child: Text(descriptionText,
+            style: GoogleFonts.aboreto(
+                textStyle: const TextStyle(
+              fontSize: 16.0,
+            ))));
+   
     final titleAndStars = Row(
       children: [
         Container(
-          margin: const EdgeInsets.only(
-            top: 320.0,
-            left: 20.0,
-            right: 20.0,
-          ),
-          child:  const Text(
-            "Gabriela Anahi",
-            style: titleStyle,
-            textAlign: TextAlign.left,
-          )
-          ),
-          star,
-          star,
-          star,
+            margin: const EdgeInsets.only(top: 320.0, left: 20.0, right: 20.0),
+            child: const Text(
+              "VIAJES",
+              style: titleStyle,
+              textAlign: TextAlign.center,
+            )),
+        estrella,
+        estrella,
+        estrella,
+        estrella,
+        estrella,
       ],
     );
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        titleAndStars,
+        titleAndStars, 
         description,
-        const ButtonNavigate(
-          buttonText: 'Mas informacion....',
-        )
       ],
     );
   }
